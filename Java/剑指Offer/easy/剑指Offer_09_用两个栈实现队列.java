@@ -10,7 +10,7 @@ import java.util.Stack;
 public class 剑指Offer_09_用两个栈实现队列 {
     Stack<Integer> stack1, stack2;
 
-    public CQueue() {
+    public 剑指Offer_09_用两个栈实现队列() {
         stack1 = new Stack<>();
         stack2 = new Stack<>();
     }
