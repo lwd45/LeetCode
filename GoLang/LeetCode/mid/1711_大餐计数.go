@@ -1,4 +1,4 @@
-package LeetCode
+package mid
 
 func countPairs(deliciousness []int) int {
 	maxNum := deliciousness[0]
