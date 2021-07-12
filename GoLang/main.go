@@ -1,12 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"LeetCode/GoLang/LeetCode/mid"
+	"fmt"
+)
 
 func main() {
-	//fmt.Println(mid.FrequencySort("asdas"))
-	buildTree(make([]int, 0))
-}
-
-func buildTree(preorder []int) {
-	fmt.Printf("%T\n", preorder)
+	fmt.Println(mid.HIndex([]int{1, 2, 100}))
 }
