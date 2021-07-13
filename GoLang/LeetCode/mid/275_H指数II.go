@@ -1,6 +1,6 @@
 package mid
 
-func HIndex(citations []int) int {
+func hIndex(citations []int) int {
 	left, right := 0, len(citations)-1
 	for left <= right {
 		mid := left + (right-left)/2
