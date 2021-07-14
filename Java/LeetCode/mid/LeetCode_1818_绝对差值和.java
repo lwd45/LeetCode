@@ -18,12 +18,12 @@ public class LeetCode_1818_绝对差值和 {
             int gap = Math.abs(nums1[i] - nums2[i]);
             sum = (sum + gap) % mod;
 
-            int j = binarySearch(copy, nums1[i]);
+            int j = binarySearch(copy, nums2[i]);
             if (j < nums1.length) {
-                max = Math.max(max, gap - Math.abs(nums1[j] - nums2[i]));
+                max = Math.max(max, gap - Math.abs(copy[j] - nums2[i]));
             }
             if (j > 0) {
-                max = Math.max(max, gap - Math.abs(nums1[j - 1] - nums2[i]));
+                max = Math.max(max, gap - Math.abs(copy[j - 1] - nums2[i]));
             }
         }
         return (sum - max + mod) % mod;
