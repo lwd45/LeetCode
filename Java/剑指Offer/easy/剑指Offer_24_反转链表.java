@@ -26,7 +26,7 @@ public class 剑指Offer_24_反转链表 {
         head.next = null;
         return node;
     }
-    
+
     class ListNode {
         int val;
         ListNode next;
