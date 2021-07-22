@@ -16,15 +16,17 @@ public class 剑指Offer_52_两个链表的第一个公共节点 {
             ListNode temp = headA;
             headA = headB;
             headB = temp;
+
+            int tempN = len1;
             len1 = len2;
-            len2 = l1;
+            len2 = tempN;
         }
         while (len1 > len2) {
             headA = headA.next;
             len1--;
         }
 
-        while (headA != null && headB != null && headA != headB) {
+        while (headA != null && headA != headB) {
             headA = headA.next;
             headB = headB.next;
         }
