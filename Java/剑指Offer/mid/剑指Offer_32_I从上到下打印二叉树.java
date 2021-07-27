@@ -12,7 +12,7 @@ import java.util.LinkedList;
  */
 public class 剑指Offer_32_I从上到下打印二叉树 {
     public int[] levelOrder(TreeNode root) {
-        if (root == null) return null;
+        if (root == null) return new int[0];
 
         ArrayList<TreeNode> ans = new ArrayList<>();
         LinkedList<TreeNode> list = new LinkedList<>();
