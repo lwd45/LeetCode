@@ -37,7 +37,7 @@ public class LeetCode_1104_二叉树寻路 {
                 reverse = !reverse;
             }
         } else {//偶数层，倒排序
-            label = max - label + min; 
+            label = max - label + min;
             boolean reverse = false; // 上一层是否逆序
             while (level > 1) {
                 level--;
