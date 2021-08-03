@@ -1,18 +1,12 @@
-package main
+package mid
 
 import (
-	"fmt"
 	"sort"
 	"strconv"
 )
 
-func main() {
-	//fmt.Println(strconv.ParseInt("09", 10, 64))
-	fmt.Println(minNumber([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}))
-}
-
 func minNumber(nums []int) string {
-	slic := make([]string, 0)
+	slic := make([]string, len(nums))
 	for _, v := range nums {
 		slic = append(slic, strconv.Itoa(v))
 	}
