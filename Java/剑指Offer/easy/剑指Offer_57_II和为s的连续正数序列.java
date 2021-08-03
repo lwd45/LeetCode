@@ -23,7 +23,7 @@ public class 剑指Offer_57_II和为s的连续正数序列 {
             } else {
                 int[] ans = new int[right - left + 1];
                 int index = 0;
-                for (int i = left; i < right; ++i) {
+                for (int i = left; i <= right; ++i) {
                     ans[index++] = i;
                 }
                 ansList.add(ans);
