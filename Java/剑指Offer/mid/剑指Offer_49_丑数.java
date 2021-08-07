@@ -16,5 +16,6 @@ public class 剑指Offer_49_丑数 {
             if (nums[i] / nums[index3] == index3 && nums[i] % nums[index3] == 0) index3++;
             if (nums[i] / nums[index5] == index5 && nums[i] % nums[index5] == 0) index5++;
         }
+        return nums[n-1];
     }
 }
