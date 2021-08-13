@@ -1,5 +1,7 @@
 package mid;
 
+import java.util.Arrays;
+
 /**
  * Created by lwd at 2021/8/12
  *
@@ -9,6 +11,7 @@ public class LeetCode_238_除自身以外数组的乘积 {
     public int[] productExceptSelf(int[] nums) {
         int len = nums.length;
         int[] ans = new int[len];
+        Arrays.fill(ans, 1);
         for (int i = 1; i < len; i++) {
             ans[i] = ans[i - 1] * nums[i - 1];
         }
