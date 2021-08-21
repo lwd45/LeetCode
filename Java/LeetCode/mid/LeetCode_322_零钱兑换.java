@@ -40,7 +40,6 @@ public class LeetCode_322_零钱兑换 {
             }
         }
 
-        if ((amount > 0) && dp[amount] == 0) return -1;
-        return dp[amount];
+        return dp[amount] == Integer.MAX_VALUE-1 ? -1 : dp[amount];
     }
 }
