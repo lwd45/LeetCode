@@ -30,6 +30,8 @@ public class LeetCode_345_反转字符串中的元音字母 {
             char temp = chars[left];
             chars[left] = chars[right];
             chars[right] = temp;
+            left++;
+            right--;
         }
         return new String(chars);
     }
