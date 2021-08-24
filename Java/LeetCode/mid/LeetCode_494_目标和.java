@@ -26,8 +26,8 @@ package mid;
 public class LeetCode_494_目标和 {
     public int findTargetSumWays(int[] nums, int target) {
         int[][] dp = new int[nums.length][2001];
-        dp[0][nums[0] + 1000] = 1;
-        dp[0][-nums[0] + 1000] = 1;
+        dp[0][nums[0] + 1000] += 1;
+        dp[0][-nums[0] + 1000] += 1;
 
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j <= 2000; j++) {
