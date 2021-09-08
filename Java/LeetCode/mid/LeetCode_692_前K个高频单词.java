@@ -21,14 +21,14 @@ public class LeetCode_692_前K个高频单词 {
                 if (!cnt.getOrDefault(o1, 0).equals(cnt.getOrDefault(o2, 0))) {
                     return cnt.getOrDefault(o1, 0) - cnt.getOrDefault(o2, 0);
                 }
-                return o1.compareTo(o2);
+                return o2.compareTo(o1);
             }
         });
 
         for (String key : cnt.keySet()) {
             if (queue.size() < k) {
                 queue.add(key);
-            } else if (cnt.getOrDefault(key, 0) > cnt.getOrDefault(queue.peek(), 0)) {
+            } else  {
                 queue.add(key);
                 queue.poll();
             }
