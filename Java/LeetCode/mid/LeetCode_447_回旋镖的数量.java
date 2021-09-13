@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class LeetCode_447_回旋镖的数量 {
     public int numberOfBoomerangs(int[][] points) {
-
+        int ans = 0;
         for (int[] p : points) {
             HashMap<Integer, Integer> cnt = new HashMap<>();
 
@@ -19,12 +19,11 @@ public class LeetCode_447_回旋镖的数量 {
                 int dis = (p[0] - q[0]) * (p[0] - q[0]) + (p[1] - q[1]) * (p[1] - q[1]);
                 cnt.put(dis, cnt.getOrDefault(dis, 0) + 1);
             }
-        }
 
-        int ans = 0;
-        for (Integer key : cnt.keySet()) {
-            int m = cnt.get(key);
-            ans += m * (m - 1);
+            for (Integer key : cnt.keySet()) {
+                int m = cnt.get(key);
+                ans += m * (m - 1);
+            }
         }
         return ans;
     }
