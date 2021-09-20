@@ -10,13 +10,9 @@ import java.util.PriorityQueue;
 public class LeetCode_703_数据流中的第K大元素 {
     class KthLargest {
         PriorityQueue<Integer> minHeap;
-        PriorityQueue<Integer> maxHeap;
         Integer k;
 
         public KthLargest(int k, int[] nums) {
-            maxHeap = new PriorityQueue<>((i, j) -> {
-                return i - j;
-            })
             this.k = k;
             minHeap = new PriorityQueue<>();
             for (int num : nums) {
