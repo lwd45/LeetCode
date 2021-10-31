@@ -49,16 +49,16 @@ func canCompleteCircuit(gas []int, cost []int) int {
 }
 
 //func canCompleteCircuit(gas []int, cost []int) int {
-//	left, minLeft, startIndex := 0, math.MaxInt64, -1
+//	left, minLeft, insertIndex := 0, math.MaxInt64, -1
 //	for i := 0; i < len(gas); i++ {
 //		left += gas[i] - cost[i]
 //		if left < minLeft {
-//			startIndex = i
+//			insertIndex = i
 //			minLeft = left
 //		}
 //	}
 //	if left < 0 {
 //		return -1
 //	}
-//	return (startIndex + 1) % len(gas)
+//	return (insertIndex + 1) % len(gas)
 //}

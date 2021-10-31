@@ -15,7 +15,7 @@ type LRUCache struct {
 	maps     *map[int]*Node
 }
 
-func Constructor(capacity int) LRUCache {
+func Constructors(capacity int) LRUCache {
 	cache := LRUCache{
 		capacity: capacity,
 		length:   0,
