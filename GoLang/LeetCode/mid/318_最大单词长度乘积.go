@@ -1,6 +1,6 @@
 package mid
 
-func MaxProduct(words []string) int {
+func maxProduct(words []string) int {
 	mask := make([]int, len(words))
 	for idx, word := range words {
 		t := 0
