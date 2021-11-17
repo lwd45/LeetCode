@@ -11,40 +11,40 @@ package mid
 输出: 0
 解释: 结果不能为 2, 因为 [-2,-1] 不是子数组。
 */
-func maxProduct(nums []int) int {
-	if nums == nil || len(nums) == 0 {
-		return 0
-	}
-	sMax, sMin := make([]int, len(nums)), make([]int, len(nums))
-	sMax[0], sMin[0] = nums[0], nums[0]
-
-	ret := nums[0]
-	for i := 1; i < len(nums); i++ {
-		num1 := sMax[i-1] * nums[i]
-		num2 := sMin[i-1] * nums[i]
-		sMax[i] = Max152(num1, num2, nums[i])
-		sMin[i] = Min152(num1, num2, nums[i])
-		ret = Max152(sMax[i], sMin[i], ret)
-	}
-	return ret
-}
-
-func Max152(nums ...int) int {
-	max := nums[0]
-	for i := 1; i < len(nums); i++ {
-		if nums[i] > max {
-			max = nums[i]
-		}
-	}
-	return max
-}
-
-func Min152(nums ...int) int {
-	min := nums[0]
-	for i := 1; i < len(nums); i++ {
-		if nums[i] < min {
-			min = nums[i]
-		}
-	}
-	return min
-}
+//func maxProduct(nums []int) int {
+//	if nums == nil || len(nums) == 0 {
+//		return 0
+//	}
+//	sMax, sMin := make([]int, len(nums)), make([]int, len(nums))
+//	sMax[0], sMin[0] = nums[0], nums[0]
+//
+//	ret := nums[0]
+//	for i := 1; i < len(nums); i++ {
+//		num1 := sMax[i-1] * nums[i]
+//		num2 := sMin[i-1] * nums[i]
+//		sMax[i] = Max152(num1, num2, nums[i])
+//		sMin[i] = Min152(num1, num2, nums[i])
+//		ret = Max152(sMax[i], sMin[i], ret)
+//	}
+//	return ret
+//}
+//
+//func Max152(nums ...int) int {
+//	max := nums[0]
+//	for i := 1; i < len(nums); i++ {
+//		if nums[i] > max {
+//			max = nums[i]
+//		}
+//	}
+//	return max
+//}
+//
+//func Min152(nums ...int) int {
+//	min := nums[0]
+//	for i := 1; i < len(nums); i++ {
+//		if nums[i] < min {
+//			min = nums[i]
+//		}
+//	}
+//	return min
+//}
