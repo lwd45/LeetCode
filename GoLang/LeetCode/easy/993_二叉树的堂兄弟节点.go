@@ -1,10 +1,10 @@
 package easy
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+//type TreeNode struct {
+//	Val   int
+//	Left  *TreeNode
+//	Right *TreeNode
+//}
 
 //func IsCousins(root *TreeNode, x int, y int) bool {
 //	if root.Val == x || root.Val == y {
