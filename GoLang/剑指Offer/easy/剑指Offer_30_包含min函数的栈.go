@@ -4,13 +4,13 @@ type MinStack struct {
 	stackNormal []int
 	stackMin    []int
 }
-
-func Constructor() MinStack {
-	return MinStack{
-		stackNormal: make([]int, 0),
-		stackMin:    make([]int, 0),
-	}
-}
+//
+//func Constructor() MinStack {
+//	return MinStack{
+//		stackNormal: make([]int, 0),
+//		stackMin:    make([]int, 0),
+//	}
+//}
 
 func (this *MinStack) Push(x int) {
 	this.stackNormal = append(this.stackNormal, x)
