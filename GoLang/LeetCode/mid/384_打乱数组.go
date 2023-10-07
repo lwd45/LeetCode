@@ -34,9 +34,9 @@ type Solution struct {
 	shuffle []int
 }
 
-func Constructor(nums []int) Solution {
-	return Solution{origin: append([]int{}, nums...), shuffle: nums}
-}
+//func Constructor(nums []int) Solution {
+//	return Solution{origin: append([]int{}, nums...), shuffle: nums}
+//}
 
 func (this *Solution) Reset() []int {
 	return this.origin
