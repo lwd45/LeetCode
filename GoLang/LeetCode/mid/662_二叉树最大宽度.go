@@ -1,9 +1,9 @@
 package mid
 
-type pair struct {
-	root  *TreeNode
-	index int
-}
+//type pair struct {
+//	root  *TreeNode
+//	index int
+//}
 
 //func widthOfBinaryTree(root *TreeNode) int {
 //	pairList := []pair{{

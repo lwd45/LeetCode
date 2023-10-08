@@ -1,7 +1,5 @@
 package mid
 
-import "math"
-
 type Pair struct {
 	Day   int
 	Price int
@@ -12,12 +10,12 @@ type StockSpanner struct {
 	Stack      []Pair
 }
 
-func Constructor() StockSpanner {
-	return StockSpanner{
-		CurrentDay: -1,
-		Stack:      []Pair{{Day: -1, Price: math.MaxInt64}},
-	}
-}
+//func Constructor() StockSpanner {
+//	return StockSpanner{
+//		CurrentDay: -1,
+//		Stack:      []Pair{{Day: -1, Price: math.MaxInt64}},
+//	}
+//}
 
 func (s *StockSpanner) Next(price int) int {
 	for price >= s.Stack[len(s.Stack)-1].Price {
