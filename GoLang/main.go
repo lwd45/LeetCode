@@ -1,9 +1,10 @@
 package main
 
+import "fmt"
+
 func main() {
-	s := make([]int, 5)
-	for i := 0; i < 8; i++ {
-		s = append(s, i)
+	s := "01010"
+	for _, c := range s {
+		fmt.Printf("%v", c)
 	}
-	println(s)
 }
