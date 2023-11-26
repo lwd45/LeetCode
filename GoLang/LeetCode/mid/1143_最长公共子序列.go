@@ -17,23 +17,23 @@ package mid
 1 <= text1.length, text2.length <= 1000
 text1 和text2 仅由小写英文字符组成。
 */
-func LongestCommonSubsequence(text1 string, text2 string) int {
-	len1, len2 := len(text1), len(text2)
-	dp := make([][]int, len1+1)
-	for i := range dp {
-		dp[i] = make([]int, len2+1)
-	}
-
-	maxAns := 0
-	for i := 0; i < len1; i++ {
-		for j := 0; j < len2; j++ {
-			if text2[j] == text1[i] {
-				dp[i+1][j+1] = dp[i][j] + 1
-				maxAns = max(maxAns, dp[i+1][j+1])
-			} else {
-				dp[i+1][j+1] = max(dp[i+1][j], dp[i][j+1], dp[i][j])
-			}
-		}
-	}
-	return maxAns
-}
+//func LongestCommonSubsequence(text1 string, text2 string) int {
+//	len1, len2 := len(text1), len(text2)
+//	dp := make([][]int, len1+1)
+//	for i := range dp {
+//		dp[i] = make([]int, len2+1)
+//	}
+//
+//	maxAns := 0
+//	for i := 0; i < len1; i++ {
+//		for j := 0; j < len2; j++ {
+//			if text2[j] == text1[i] {
+//				dp[i+1][j+1] = dp[i][j] + 1
+//				maxAns = max(maxAns, dp[i+1][j+1])
+//			} else {
+//				dp[i+1][j+1] = max(dp[i+1][j], dp[i][j+1], dp[i][j])
+//			}
+//		}
+//	}
+//	return maxAns
+//}
