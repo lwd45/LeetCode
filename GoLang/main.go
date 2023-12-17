@@ -1,9 +1,13 @@
 package main
 
-import "github.com/lwd45/LeetCode/GoLang/LeetCode/mid"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	arr := []int{1, 4, 5, 2, 6, 3}
-	mat := [][]int{{4, 3, 5}, {1, 2, 6}}
-	mid.FirstCompleteIndex(arr, mat)
+	a := []int{1, 2, 3, 4, 5}
+	//a := []int{5, 4, 3, 2, 1}
+	c := sort.Search(len(a), func(i int) bool { return a[i] < 3 })
+	fmt.Println(c)
 }
