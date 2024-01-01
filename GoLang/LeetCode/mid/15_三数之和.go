@@ -19,6 +19,37 @@ import "sort"
 0 <= nums.length <= 3000
 -105 <= nums[i] <= 105
 */
+//func threeSum(nums []int) [][]int {
+//	sort.Ints(nums)
+//	var ans [][]int
+//
+//	for i := 0; i < len(nums)-2; i++ {
+//		if i > 0 && nums[i] == nums[i-1] {
+//			continue
+//		}
+//
+//		target := -nums[i]
+//		for j, k := i+1, len(nums)-1; j < k; {
+//			if nums[j]+nums[k] > target {
+//				k--
+//			} else if nums[j]+nums[k] < target {
+//				j++
+//			} else {
+//				ans = append(ans, []int{nums[i], nums[j], nums[k]})
+//				j++
+//				k--
+//				for j < k && nums[j] == nums[j-1] {
+//					j++
+//				}
+//				for j < k && nums[k] == nums[k+1] {
+//					k--
+//				}
+//			}
+//		}
+//	}
+//	return ans
+//}
+
 func threeSum(nums []int) [][]int {
 	sort.Ints(nums)
 	var ans [][]int
@@ -28,21 +59,19 @@ func threeSum(nums []int) [][]int {
 			continue
 		}
 
-		target := -nums[i]
-		for j, k := i+1, len(nums)-1; j < k; {
-			if nums[j]+nums[k] > target {
-				k--
-			} else if nums[j]+nums[k] < target {
-				j++
+		for k, j := i+1, len(nums)-1; k < j; {
+			target := nums[i] + nums[k] + nums[j]
+			if target > 0 {
+				j--
+			} else if target < 0 {
+				k++
 			} else {
-				ans = append(ans, []int{nums[i], nums[j], nums[k]})
-				j++
-				k--
-				for j < k && nums[j] == nums[j-1] {
-					j++
+				ans = append(ans, []int{nums[i], nums[k], nums[j]})
+				k++
+				j--
+				for ; k < j && nums[k-1] == nums[k]; k++ {
 				}
-				for j < k && nums[k] == nums[k+1] {
-					k--
+				for ; k < j && nums[j] == nums[j+1]; j-- {
 				}
 			}
 		}
