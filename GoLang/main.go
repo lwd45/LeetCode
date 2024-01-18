@@ -1,13 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-)
-
 func main() {
-	a := []int{1, 2, 3, 4, 5}
-	//a := []int{5, 4, 3, 2, 1}
-	c := sort.Search(len(a), func(i int) bool { return a[i] < 3 })
-	fmt.Println(c)
+	addMinimum("aaaaba")
+}
+
+func addMinimum(word string) int {
+	n := len(word)
+
+	res := 1
+	for i := 1; i < n; i++ {
+		k := int(word[i]) - int(word[i-1])
+		if k <= 0 {
+			res++
+		}
+	}
+
+	return 3*res - n
 }
