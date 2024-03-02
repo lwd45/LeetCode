@@ -29,35 +29,35 @@ package mid
 //	return root
 //}
 
-func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
-	parent := map[int]*TreeNode{}
-	visited := map[int]bool{}
-
-	dfs_236(root, parent)
-	for p != nil {
-		visited[p.Val] = true
-		p = parent[p.Val]
-	}
-	for q != nil {
-		if visited[q.Val] {
-			return q
-		}
-		q = parent[q.Val]
-	}
-	return nil
-}
-
-func dfs_236(root *TreeNode, parent map[int]*TreeNode) {
-	if root == nil {
-		return
-	}
-
-	if root.Left != nil {
-		parent[root.Left.Val] = root
-		dfs_236(root.Left, parent)
-	}
-	if root.Right != nil {
-		parent[root.Right.Val] = root
-		dfs_236(root.Right, parent)
-	}
-}
+//func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+//	parent := map[int]*TreeNode{}
+//	visited := map[int]bool{}
+//
+//	dfs_236(root, parent)
+//	for p != nil {
+//		visited[p.Val] = true
+//		p = parent[p.Val]
+//	}
+//	for q != nil {
+//		if visited[q.Val] {
+//			return q
+//		}
+//		q = parent[q.Val]
+//	}
+//	return nil
+//}
+//
+//func dfs_236(root *TreeNode, parent map[int]*TreeNode) {
+//	if root == nil {
+//		return
+//	}
+//
+//	if root.Left != nil {
+//		parent[root.Left.Val] = root
+//		dfs_236(root.Left, parent)
+//	}
+//	if root.Right != nil {
+//		parent[root.Right.Val] = root
+//		dfs_236(root.Right, parent)
+//	}
+//}
