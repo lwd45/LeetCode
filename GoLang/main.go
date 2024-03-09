@@ -1,19 +1,24 @@
 package main
 
+import "strconv"
+
 func main() {
-	addMinimum("aaaaba")
+	divisibilityArray("1010", 10)
 }
+func divisibilityArray(word string, m int) []int {
+	ans := make([]int, len(word))
 
-func addMinimum(word string) int {
-	n := len(word)
-
-	res := 1
-	for i := 1; i < n; i++ {
-		k := int(word[i]) - int(word[i-1])
-		if k <= 0 {
-			res++
+	pre := 0
+	for i := 0; i < len(word); i++ {
+		now, _ := strconv.ParseInt(word[i:i+1], 10, 64)
+		pre = pre*10 + int(now)
+		if pre%m == 0 {
+			pre = 0
+			ans[i] = 1
+		} else {
+			pre = pre % m
 		}
 	}
 
-	return 3*res - n
+	return ans
 }
