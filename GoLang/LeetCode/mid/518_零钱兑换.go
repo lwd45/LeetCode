@@ -1,8 +1,4 @@
-package main
-
-func main() {
-	change(5, []int{1, 2, 5})
-}
+package mid
 
 func change(amount int, coins []int) int {
 	dp := make([]int, amount+1)
