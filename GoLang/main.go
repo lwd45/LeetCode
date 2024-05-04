@@ -1,19 +1,28 @@
 package main
 
+import (
+	"strings"
+)
+
 func main() {
-	change(5, []int{1, 2, 5})
+	baseNeg2(2)
 }
 
-func change(amount int, coins []int) int {
-	dp := make([]int, amount+1)
-	dp[0] = 1
-
-	for _, coin := range coins {
-		for i := coin; i <= amount; i++ {
-			if i-coin >= 0 && dp[i-coin] > 0 {
-				dp[i] += dp[i-coin]
-			}
-		}
+func baseNeg2(n int) string {
+	if n == 0 {
+		return "0"
 	}
-	return dp[amount]
+
+	builder := strings.Builder{}
+	for n != 0 {
+		r := n % -2
+		if r == 0 {
+			builder.WriteString("0")
+		} else {
+			n -= 1
+			builder.WriteString("1")
+		}
+		n /= -2
+	}
+	return builder.String()
 }
