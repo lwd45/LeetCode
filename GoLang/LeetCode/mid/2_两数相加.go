@@ -86,51 +86,85 @@ package mid
 //	return prev.Next
 //}
 
+//	func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+//		temp := &ListNode{}
+//		now := temp
+//
+//		carry := 0
+//		for ; l1 != nil && l2 != nil; l1, l2 = l1.Next, l2.Next {
+//			val := (l1.Val + l2.Val + carry) % 10
+//			carry = (l1.Val + l2.Val + carry) / 10
+//
+//			node := &ListNode{
+//				Val: val,
+//			}
+//			now.Next = node
+//			now = now.Next
+//		}
+//
+//		for ; l1 != nil; l1 = l1.Next {
+//			val := (l1.Val + carry) % 10
+//			carry = (l1.Val + carry) / 10
+//
+//			node := &ListNode{
+//				Val: val,
+//			}
+//			now.Next = node
+//			now = now.Next
+//		}
+//
+//		for ; l2 != nil; l2 = l2.Next {
+//			val := (l2.Val + carry) % 10
+//			carry = (l2.Val + carry) / 10
+//
+//			node := &ListNode{
+//				Val: val,
+//			}
+//			now.Next = node
+//			now = now.Next
+//		}
+//
+//		if carry > 0 {
+//			node := &ListNode{
+//				Val: carry,
+//			}
+//			now.Next = node
+//			now = now.Next
+//		}
+//
+//		return temp.Next
+//	}
+
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	temp := &ListNode{}
-	now := temp
+	now := &ListNode{}
+	next := now
 
 	carry := 0
-	for ; l1 != nil && l2 != nil; l1, l2 = l1.Next, l2.Next {
-		val := (l1.Val + l2.Val + carry) % 10
-		carry = (l1.Val + l2.Val + carry) / 10
+	for l1 != nil || l2 != nil {
+		x, y := 0, 0
 
-		node := &ListNode{
-			Val: val,
+		if l1 != nil {
+			x = l1.Val
+			l1 = l1.Next
 		}
-		now.Next = node
-		now = now.Next
-	}
-
-	for ; l1 != nil; l1 = l1.Next {
-		val := (l1.Val + carry) % 10
-		carry = (l1.Val + carry) / 10
-
-		node := &ListNode{
-			Val: val,
+		if l2 != nil {
+			y = l2.Val
+			l2 = l2.Next
 		}
-		now.Next = node
-		now = now.Next
-	}
 
-	for ; l2 != nil; l2 = l2.Next {
-		val := (l2.Val + carry) % 10
-		carry = (l2.Val + carry) / 10
+		sum := (x + y + carry) % 10
+		carry = (x + y + carry) / 10
 
-		node := &ListNode{
-			Val: val,
-		}
-		now.Next = node
-		now = now.Next
+		node := ListNode{Val: sum}
+		next.Next = &node
+		next = next.Next
 	}
 
 	if carry > 0 {
-		node := &ListNode{
-			Val: carry,
-		}
-		now.Next = node
-		now = now.Next
+		node := ListNode{Val: carry}
+		next.Next = &node
+		next = next.Next
 	}
 
-	return temp.Next
+	return now.Next
 }

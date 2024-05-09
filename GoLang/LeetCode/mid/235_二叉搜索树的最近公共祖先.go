@@ -1,18 +1,18 @@
 package mid
 
-func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
-	ans := root
-	for {
-		if ans.Val > p.Val && ans.Val > q.Val {
-			ans = ans.Left
-		} else if ans.Val < p.Val && ans.Val < q.Val {
-			ans = ans.Right
-		} else {
-			break
-		}
-	}
-	return ans
-}
+//func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+//	ans := root
+//	for {
+//		if ans.Val > p.Val && ans.Val > q.Val {
+//			ans = ans.Left
+//		} else if ans.Val < p.Val && ans.Val < q.Val {
+//			ans = ans.Right
+//		} else {
+//			break
+//		}
+//	}
+//	return ans
+//}
 
 //func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 //	pPath := getPath(root, p)
