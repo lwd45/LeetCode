@@ -10,20 +10,37 @@ package mid
 第二个 1 的下一个最大的数需要循环搜索，结果也是 2。
 注意: 输入数组的长度不会超过 10000。
 */
+//func nextGreaterElements(nums []int) []int {
+//	ans := make([]int, len(nums))
+//	for i := 0; i < len(nums); i++ {
+//		ans[i] = -1
+//	}
+//
+//	stack := make([]int, 0, len(nums))
+//	for i := 0; i < 2*len(nums); i++ {
+//		for len(stack) > 0 && (nums[stack[len(stack)-1]%len(nums)] < nums[i%len(nums)]) {
+//			ans[stack[len(stack)-1]%len(nums)] = nums[i%len(nums)]
+//			stack = stack[:len(stack)-1]
+//		}
+//		stack = append(stack, i)
+//	}
+//
+//	return ans
+//}
+
 func nextGreaterElements(nums []int) []int {
 	ans := make([]int, len(nums))
 	for i := 0; i < len(nums); i++ {
 		ans[i] = -1
 	}
 
-	stack := make([]int, 0, len(nums))
+	stack := make([]int, 0)
 	for i := 0; i < 2*len(nums); i++ {
-		for len(stack) > 0 && (nums[stack[len(stack)-1]%len(nums)] < nums[i%len(nums)]) {
+		for len(stack) > 0 && nums[stack[len(stack)-1]%len(nums)] < nums[i%len(nums)] {
 			ans[stack[len(stack)-1]%len(nums)] = nums[i%len(nums)]
 			stack = stack[:len(stack)-1]
 		}
 		stack = append(stack, i)
 	}
-
 	return ans
 }
