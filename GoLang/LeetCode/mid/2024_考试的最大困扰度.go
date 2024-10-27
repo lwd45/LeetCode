@@ -1,8 +1,4 @@
-package main
-
-func main() {
-	maxConsecutiveAnswers("TFFT", 1)
-}
+package mid
 
 func maxConsecutiveAnswers(answerKey string, k int) int {
 	ans := 0
